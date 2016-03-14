@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Chrismou\\Oauth1\\Discogs\\": "src/"
+            "Chrismou\\OAuth1\\Discogs\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Chrismou\\Oauth1\\Discogs\\Tests\\": "tests/"
+            "Chrismou\\OAuth1\\Discogs\\Tests\\": "tests/"
         }
     },
     "extra": {

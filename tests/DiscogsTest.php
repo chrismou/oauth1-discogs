@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrismou\OAuth1\Discogs\Tests\Provider;
+namespace Chrismou\OAuth1\Discogs\Tests;
 
-use Chrismou\OAuth1\Discogs\Provider\Discogs;
+use Chrismou\OAuth1\Discogs\Discogs;
 use Mockery as m;
 
 class DiscogsTest extends \PHPUnit_Framework_TestCase

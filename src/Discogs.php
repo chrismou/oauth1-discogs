@@ -1,6 +1,6 @@
 <?php
 
-namespace Chrismou\OAuth1\Discogs\Provider;
+namespace Chrismou\OAuth1\Discogs;
 
 use League\OAuth1\Client\Credentials\TokenCredentials;
 use League\OAuth1\Client\Server\Server;
