@@ -1,0 +1,52 @@
+{
+    "name": "chrismou/oauth2-discogs",
+    "description": "Discogs OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Chrisostomou",
+            "email": "dev@mou.me",
+            "homepage": "https://mou.me"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/chrismou/oauth2-discogs",
+        "issues": "https://github.com/chrismou/oauth2-discogs/issues"
+    },
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authorisation",
+        "authentication",
+        "discogs"
+    ],
+    "require": {
+        "php": ">=5.5",
+        "league/oauth2-client": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "squizlabs/php_codesniffer": "*",
+        "vectorface/dunit": "^2.1",
+        "codeclimate/php-test-reporter": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chrismou\\Discogs\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chrismou\\Discogs\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
