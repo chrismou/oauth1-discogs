@@ -1,52 +1,67 @@
 <?php
 
-namespace Chrismou\OAuth2Discogs\Provider;
+namespace Chrismou\OAuth1\Discogs\Provider;
 
-use League\OAuth2\Client\Provider\AbstractProvider;
-use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
-use League\OAuth2\Client\Token\AccessToken;
-use Psr\Http\Message\ResponseInterface;
+use League\OAuth1\Client\Credentials\TokenCredentials;
+use League\OAuth1\Client\Server\Server;
+use League\OAuth1\Client\Server\User;
 
-class Discogs extends AbstractProvider
+class Discogs extends Server
 {
-    /**
-     * Returns the base URL for authorizing a client.
-     *
-     * @return string
-     */
-    public function getBaseAuthorizationUrl()
+    protected $responseType = 'json';
+
+    public function urlTemporaryCredentials()
     {
-        return "";
+        return 'https://api.discogs.com/oauth/request_token';
     }
 
-    /**
-     * Returns the base URL for requesting an access token.
-     *
-     * @param array $params
-     * @return string
-     */
-    public function getBaseAccessTokenUrl(array $params)
+    public function urlAuthorization()
     {
-        return "";
+        return 'https://discogs.com/oauth/authorize';
     }
 
-    public function getResourceOwnerDetailsUrl(AccessToken $token)
+    public function urlTokenCredentials()
     {
-        return "";
+        return 'https://api.discogs.com/oauth/access_token';
     }
 
-    protected function getDefaultScopes()
+    public function urlUserDetails()
     {
-        return [];
+        return 'https://api.discogs.com/oauth/identity';
     }
 
-    protected function checkResponse(ResponseInterface $response, $data)
+    public function userDetails($data, TokenCredentials $tokenCredentials)
     {
-        //throw new IdentityProviderException($error, $code, $data);
+        /*$user = new User;
+
+        $user->firstName = (string) $data->User->FirstName;
+        $user->lastName  = (string) $data->User->LastName;
+        $user->name      = $user->firstName . ' ' . $user->lastName;
+        $user->email     = (string) $data->User->EmailAddress;
+
+        $verified = filter_var((string) $data->User->IsVerified, FILTER_VALIDATE_BOOLEAN);
+
+        $user->extra = compact('verified');
+
+        return $user;*/
+        var_dump($data);
+        var_dump($tokenCredentials);
+        die;
+        return $data;
     }
 
-    protected function createResourceOwner(array $response, AccessToken $token)
+    public function userUid($data, TokenCredentials $tokenCredentials)
     {
-        return new DiscogsUser($response);
+        return;
+    }
+
+    public function userEmail($data, TokenCredentials $tokenCredentials)
+    {
+        return (string) $data->User->EmailAddress;
+    }
+
+    public function userScreenName($data, TokenCredentials $tokenCredentials)
+    {
+        return;
     }
 }
