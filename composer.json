@@ -24,7 +24,7 @@
         "discogs"
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.3",
         "league/oauth1-client": "~1.6"
     },
     "require-dev": {

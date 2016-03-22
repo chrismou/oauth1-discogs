@@ -11,10 +11,10 @@ class DiscogsTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->provider = new Discogs([
+        $this->provider = new Discogs(array(
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
             'redirectUri' => 'none',
-        ]);
+        ));
     }
 }
